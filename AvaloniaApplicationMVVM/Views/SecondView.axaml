@@ -2,17 +2,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:AvaloniaApplicationMVVM.Views"
 		xmlns:vm="clr-namespace:AvaloniaApplicationMVVM.ViewModels"
+		x:DataType="vm:SecondViewModel"
         mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="150"
 		Width="200" Height="150"
         WindowStartupLocation="Manual"
         Position="0,0"
         x:Class="AvaloniaApplicationMVVM.SecondView"
-        Title="{Binding Title}"
-		x:DataType="vm:SecondViewModel">
+        Title="{Binding Title}">
 
 	<StackPanel>
 		<TextBlock Text="{Binding Title}"/>
-		<CheckBox Content="Sync CheckBox" IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+		<!-- <CheckBox Content="Sync CheckBox" IsChecked="{Binding IsChecked, Mode=TwoWay}"/> -->
+		<local:MyCheckBoxControl DataContext="{Binding CheckBoxControlViewModel}"/>
 	</StackPanel>
 </Window>

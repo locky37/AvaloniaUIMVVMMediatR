@@ -1,0 +1,13 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:AvaloniaApplicationMVVM.ViewModels"
+			 xmlns:vm="clr-namespace:AvaloniaApplicationMVVM.ViewModels"
+			 x:DataType="vm:MyCheckBoxControlViewModel"
+             x:Class="AvaloniaApplicationMVVM.Views.MyCheckBoxControl">
+	<UserControl.DataContext>
+		<local:MyCheckBoxControlViewModel />
+	</UserControl.DataContext>
+	<CheckBox Content="Sync CheckBox" IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+</UserControl>

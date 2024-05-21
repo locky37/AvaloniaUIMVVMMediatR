@@ -17,9 +17,27 @@ public partial class MainViewModel : ObservableObject, INotificationHandler<Chec
     private readonly IMediator _mediator;
     private bool _isUpdating;
 
+    public MyCheckBoxControlViewModel CheckBoxControlViewModel { get; }
+
     public MainViewModel(IMediator mediator)
     {
+        //_mediator = mediator;
+
         _mediator = mediator;
+        CheckBoxControlViewModel = new MyCheckBoxControlViewModel();
+        CheckBoxControlViewModel.PropertyChanged += (sender, e) =>
+        {
+            if (e.PropertyName == nameof(CheckBoxControlViewModel.IsChecked))
+            {
+                OnCheckBoxControlViewModelIsCheckedChanged();
+            }
+        };
+    }
+    private void OnCheckBoxControlViewModelIsCheckedChanged()
+    {
+        if (_isUpdating) return;
+        IsChecked = CheckBoxControlViewModel.IsChecked;
+        _mediator.Publish(new CheckBoxToggledNotification(CheckBoxControlViewModel.IsChecked));
     }
 
     partial void OnIsCheckedChanged(bool value)
@@ -27,6 +45,7 @@ public partial class MainViewModel : ObservableObject, INotificationHandler<Chec
 
         // Предотвращаем рекурсивный вызов
         if (_isUpdating) return;
+        CheckBoxControlViewModel.IsChecked = value;
         _mediator.Publish(new CheckBoxToggledNotification(value));
     }
 
@@ -37,6 +56,7 @@ public partial class MainViewModel : ObservableObject, INotificationHandler<Chec
         {
             _isUpdating = true;
             IsChecked = notification.IsChecked;
+            CheckBoxControlViewModel.IsChecked = notification.IsChecked;
             _isUpdating = false;
         }
 
