@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaApplicationMVVM", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaApplicationMVVM.Desktop", "AvaloniaApplicationMVVM.Desktop\AvaloniaApplicationMVVM.Desktop.csproj", "{2A0194F1-661C-419F-A29D-93859ED18A09}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaApplicationMVVMBasic", "AvaloniaApplicationMVVMBasic\AvaloniaApplicationMVVMBasic.csproj", "{AE2BA429-46B3-4128-9AA0-A9C068DB0CB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaApplicationMVVMBasic.Desktop", "AvaloniaApplicationMVVMBasic.Desktop\AvaloniaApplicationMVVMBasic.Desktop.csproj", "{C1F65824-7012-4FD9-AD46-75D31908577E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{2A0194F1-661C-419F-A29D-93859ED18A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A0194F1-661C-419F-A29D-93859ED18A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A0194F1-661C-419F-A29D-93859ED18A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE2BA429-46B3-4128-9AA0-A9C068DB0CB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE2BA429-46B3-4128-9AA0-A9C068DB0CB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE2BA429-46B3-4128-9AA0-A9C068DB0CB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE2BA429-46B3-4128-9AA0-A9C068DB0CB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1F65824-7012-4FD9-AD46-75D31908577E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1F65824-7012-4FD9-AD46-75D31908577E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1F65824-7012-4FD9-AD46-75D31908577E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1F65824-7012-4FD9-AD46-75D31908577E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,6 +7,7 @@ using AvaloniaApplicationMVVM.ViewModels;
 using AvaloniaApplicationMVVM.Views;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Reflection;
 
 namespace AvaloniaApplicationMVVM;
@@ -24,7 +25,7 @@ public partial class App : Application
         // Without this line you will get duplicate validations from both Avalonia and CT
         BindingPlugins.DataValidators.RemoveAt(0);
 
-        var services = new ServiceCollection();
+/*        var services = new ServiceCollection();
 
         // Register MediatR
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
@@ -35,7 +36,7 @@ public partial class App : Application
         services.AddSingleton<INotificationHandler<CheckBoxToggledNotification>>(serviceProvider => serviceProvider.GetRequiredService<MainViewModel>());
         services.AddSingleton<INotificationHandler<CheckBoxToggledNotification>>(serviceProvider => serviceProvider.GetRequiredService<SecondViewModel>());
 
-        var serviceProvider = services.BuildServiceProvider();
+        var serviceProvider = services.BuildServiceProvider();*/
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
@@ -55,12 +56,12 @@ public partial class App : Application
 
             var mainWindow = new MainView
             {
-                DataContext = serviceProvider.GetRequiredService<MainViewModel>()
+                DataContext = new MainViewModel()
             };
 
             var secondWindow = new SecondView
             {
-                DataContext = serviceProvider.GetRequiredService<SecondViewModel>()
+                DataContext = new SecondViewModel()
             };
 
             desktop.MainWindow = mainWindow;

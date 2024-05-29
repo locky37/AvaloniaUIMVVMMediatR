@@ -9,12 +9,14 @@
              WindowStartupLocation="Manual"
              Position="0,200"
              x:Class="AvaloniaApplicationMVVM.Views.MainView"
-		     Title="{Binding Title}"
+		     Title="Main Window"
 		     x:DataType="vm:MainViewModel">
 
 	<StackPanel>
-		<TextBlock Text="{Binding Title}"/>
+		<TextBlock Text="Main Window"/>
 		<!-- <CheckBox Content="Sync CheckBox" IsChecked="{Binding IsChecked, Mode=TwoWay}"/> -->
-		<local:MyCheckBoxControl DataContext="{Binding CheckBoxControlViewModel}"/>
+		<!-- <local:MyCheckBoxControl DataContext="{Binding CheckBoxControlViewModel}"/> -->
+		<!-- <local:MyCheckBoxControl DataContext="{Binding IsChecked}"/> -->
+		<CheckBox Content="Check Me" IsChecked="{Binding IsChecked, Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 	</StackPanel>
 </Window>
